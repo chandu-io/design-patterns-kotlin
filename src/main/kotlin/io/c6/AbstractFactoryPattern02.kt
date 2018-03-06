@@ -12,26 +12,26 @@ internal object AbstractFactoryPattern02 {
     enum class Type { SMALL, MEDIUM, LARGE }
 
     private data class SmallButton(override val text: String, override val type: Type) : Button {
-      companion object : AbstractFactory() {
+      companion object : AbstractFactory {
         override fun createButton(text: String): Button = SmallButton(text, Type.SMALL)
       }
     }
 
     private data class MediumButton(override val text: String, override val type: Type) : Button {
-      companion object : AbstractFactory() {
+      companion object : AbstractFactory {
         override fun createButton(text: String): Button = MediumButton(text, Type.MEDIUM)
       }
     }
 
     private data class LargeButton(override val text: String, override val type: Type) : Button {
-      companion object : AbstractFactory() {
+      companion object : AbstractFactory {
         override fun createButton(text: String): Button = LargeButton(text, Type.LARGE)
       }
     }
 
-    abstract class AbstractFactory {
+    interface AbstractFactory {
 
-      abstract fun createButton(text: String): Button
+      fun createButton(text: String): Button
 
       companion object {
         fun getFactory(type: Type) = when (type) {
