@@ -8,7 +8,9 @@ private typealias AbstractFactory2 = AbstractFactoryPattern02.Button.AbstractFac
 
 fun main(args: Array<String>) {
   -Example01
+
   println("=== === === === === === === === === === \n")
+
   -Example02
 }
 
