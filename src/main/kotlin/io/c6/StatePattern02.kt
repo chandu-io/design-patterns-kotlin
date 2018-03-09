@@ -1,6 +1,6 @@
 package io.c6
 
-internal object StatePattern {
+internal object StatePattern02 {
 
   class PushButton {
 
@@ -11,23 +11,23 @@ internal object StatePattern {
       // Additional logic to be run when button pushed
     }
 
-    private interface State {
+    private enum class State {
 
-      fun push(button: PushButton)
-
-      object ON : State {
+      ON {
         override fun push(button: PushButton) {
           println("Turning OFF")
           button.state = OFF
         }
-      }
+      },
 
-      object OFF : State {
+      OFF {
         override fun push(button: PushButton) {
           println("Turning ON")
           button.state = ON
         }
-      }
+      };
+
+      abstract fun push(button: PushButton)
     }
   }
 }
