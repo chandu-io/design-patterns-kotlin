@@ -4,3 +4,4 @@
 * https://sourcemaking.com/design_patterns
 * https://github.com/topics/design-patterns
 * http://java-design-patterns.com
+* https://www.programiz.com/kotlin-programming
